@@ -29,7 +29,7 @@
     "react-dom": "^18.2.0",
     "remix": "^1.6.8",
     "remix-utils": "^3.3.0",
-    "superjson": "^1.9.1",
+    "superjson": "^2.2.1",
     "zod": "^3.18.0"
   },
   "devDependencies": {
