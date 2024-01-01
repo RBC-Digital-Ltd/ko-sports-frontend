@@ -18,6 +18,9 @@ RUN npm install -g yarn@$YARN_VERSION --force
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
+# Install ca-certificates needed for https
+RUN apt-get update && apt-get install -y ca-certificates
+
 # Install packages needed to build node modules
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y build-essential node-gyp pkg-config python-is-python3
