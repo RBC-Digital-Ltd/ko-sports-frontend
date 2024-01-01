@@ -53,7 +53,7 @@ jobs:
         run: yarn
 
       - name: 🔬 Typecheck
-        run: yarn typecheck --if-present
+        run: yarn typecheck
 
   deploy:
     name: Deploy
