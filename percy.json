@@ -1,0 +1,7 @@
+[
+  {
+    "name": "Home",
+    "url": "/",
+    "waitForTimeout": 1000
+  }
+]
