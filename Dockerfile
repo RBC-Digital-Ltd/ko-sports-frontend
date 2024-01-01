@@ -14,7 +14,6 @@ ENV NODE_ENV="production"
 ARG YARN_VERSION=1.22.19
 RUN npm install -g yarn@$YARN_VERSION --force
 
-
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
@@ -32,8 +31,10 @@ RUN yarn install --frozen-lockfile --production=false
 # Copy application code
 COPY --link . .
 
+
 # Build application
-RUN yarn run build
+RUN --mount=type=secret,id=SENTRY_AUTH_TOKEN \
+    SENTRY_AUTH_TOKEN="$(cat /run/secrets/SENTRY_AUTH_TOKEN)" yarn run build
 
 # Remove development dependencies
 RUN yarn install --production=true
