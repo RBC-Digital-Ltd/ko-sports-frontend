@@ -26,6 +26,10 @@ Sentry.init({
       ),
     }),
     new Sentry.Replay(),
+    new Sentry.Feedback({
+      // Additional SDK configuration goes in here, for example:
+      colorScheme: "light",
+    }),
   ],
 });
 
