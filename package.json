@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "ko-sports-frontend",
   "private": true,
   "sideEffects": false,
   "type": "module",
@@ -48,5 +48,6 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "version": "0.0.0"
 }
