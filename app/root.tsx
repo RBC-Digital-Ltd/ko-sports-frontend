@@ -14,7 +14,7 @@ import {
 } from "@remix-run/react";
 import styles from "./tailwind.css";
 import { PublicEnv } from "./public-env";
-import { environment } from "./environment.server";
+import { getPublicKeys } from "./environment.server";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref
@@ -31,12 +31,8 @@ export const ErrorBoundary = () => {
   return <div>Something went wrong</div>;
 };
 
-export async function loader() {
-  return json({
-    publicKeys: {
-      KO_VERSION: environment().KO_VERSION,
-    },
-  });
+export function loader() {
+  return json(getPublicKeys());
 }
 
 export default function App() {

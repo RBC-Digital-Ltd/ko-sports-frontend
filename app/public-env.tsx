@@ -1,14 +1,11 @@
-import { environment } from "./environment.server";
+import { environment, getPublicKeys } from "./environment.server";
 
+type Props = ReturnType<typeof getPublicKeys>["publicKeys"];
 declare global {
   interface Window {
     ENV: Props;
   }
 }
-
-type Props = {
-  KO_VERSION: string;
-};
 
 export function PublicEnv(props: Props) {
   return (

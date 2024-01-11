@@ -1,4 +1,5 @@
 import * as z from "zod";
+import { pick } from "moderndash";
 
 const environmentSchema = z.object({
   NODE_ENV: z
@@ -8,3 +9,9 @@ const environmentSchema = z.object({
 });
 
 export const environment = () => environmentSchema.parse(process.env);
+
+export const getPublicKeys = () => {
+  return {
+    publicKeys: pick(environment(), ["KO_VERSION"]),
+  };
+};

@@ -3377,6 +3377,11 @@ hosted-git-info@^6.0.0, hosted-git-info@^6.1.1:
   dependencies:
     lru-cache "^7.5.1"
 
+hotscript@1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/hotscript/-/hotscript-1.0.13.tgz#6eb5de757e9b33444ffc22555e98dbc17fa31fb4"
+  integrity sha512-C++tTF1GqkGYecL+2S1wJTfoH6APGAsbb7PAWQ3iVIwgG/EFseAfEVOKFgAFq4yK3+6j1EjUD4UQ9dRJHX/sSQ==
+
 http-errors@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-2.0.0.tgz#b7774a1486ef73cf7667ac9ae0858c012c57b9d3"
@@ -4611,6 +4616,13 @@ modern-ahocorasick@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/modern-ahocorasick/-/modern-ahocorasick-1.0.1.tgz#dec373444f51b5458ac05216a8ec376e126dd283"
   integrity sha512-yoe+JbhTClckZ67b2itRtistFKf8yPYelHLc7e5xAwtNAXxM6wJTUx2C7QeVSJFDzKT7bCIFyBVybPMKvmB9AA==
+
+moderndash@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/moderndash/-/moderndash-3.9.0.tgz#f62f6c2ace2ba6155287f2d5dcf3f2c9433f7418"
+  integrity sha512-ym3arWmvUGbU5H2MK4WSJmOnmyYGNl5cATgjEC8mPFa/mXsa0FmZ5LwUJqTRmaJu/3JJfsIQmPAPGXEe7OFMKA==
+  dependencies:
+    hotscript "1.0.13"
 
 morgan@^1.10.0:
   version "1.10.0"
