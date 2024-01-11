@@ -11,6 +11,9 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix</h1>
+      <p>
+        KO Sports Version: <strong>{process.env.KO_VERSION}</strong>
+      </p>
       <button
         type="button"
         onClick={() => {

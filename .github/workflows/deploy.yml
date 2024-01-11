@@ -75,6 +75,13 @@ jobs:
           file: fly.toml
           field: app
 
+      - name: TOML Editor V2
+        uses: colathro/toml-editor@1.1.0
+        with:
+          file: "fly.toml"
+          key: "env.KO_VERSION"
+          value: "0.0.1"
+
       - name: Setup Fly
         uses: superfly/flyctl-actions/setup-flyctl@v1.4
 
