@@ -13,14 +13,8 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import styles from "./tailwind.css";
-
-declare global {
-  interface Window {
-    ENV: {
-      KO_VERSION: string;
-    };
-  }
-}
+import { PublicEnv } from "./public-env";
+import { environment } from "./environment.server";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref
@@ -39,14 +33,14 @@ export const ErrorBoundary = () => {
 
 export async function loader() {
   return json({
-    ENV: {
-      KO_VERSION: process.env.KO_VERSION,
+    publicKeys: {
+      KO_VERSION: environment().KO_VERSION,
     },
   });
 }
 
 export default function App() {
-  const data = useLoaderData<typeof loader>();
+  const { publicKeys } = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
@@ -58,11 +52,7 @@ export default function App() {
       <body>
         <Outlet />
         <ScrollRestoration />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
-          }}
-        />
+        <PublicEnv {...publicKeys} />
         <Scripts />
         <LiveReload />
       </body>

@@ -80,7 +80,7 @@ jobs:
         with:
           file: "fly.toml"
           key: "env.KO_VERSION"
-          value: "0.0.1"
+          value: "0.0.1-${{ github.sha }}"
 
       - name: Setup Fly
         uses: superfly/flyctl-actions/setup-flyctl@v1.4
