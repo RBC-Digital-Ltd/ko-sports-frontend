@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+import { type MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => {
   return [
@@ -12,7 +12,7 @@ export default function Index() {
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix</h1>
       <p>
-        KO Sports Version: <strong>{process.env.KO_VERSION}</strong>
+        KO Sports Version: <strong>{window.ENV.KO_VERSION}</strong>
       </p>
       <button
         type="button"

@@ -1,8 +1,26 @@
 import { captureRemixErrorBoundaryError } from "@sentry/remix";
 import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useRouteError } from "@remix-run/react";
+import {
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  json,
+  useLoaderData,
+  useRouteError,
+} from "@remix-run/react";
 import styles from "./tailwind.css";
+
+declare global {
+  interface Window {
+    ENV: {
+      KO_VERSION: string;
+    };
+  }
+}
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref
@@ -19,7 +37,16 @@ export const ErrorBoundary = () => {
   return <div>Something went wrong</div>;
 };
 
+export async function loader() {
+  return json({
+    ENV: {
+      KO_VERSION: process.env.KO_VERSION,
+    },
+  });
+}
+
 export default function App() {
+  const data = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
@@ -31,6 +58,11 @@ export default function App() {
       <body>
         <Outlet />
         <ScrollRestoration />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
+          }}
+        />
         <Scripts />
         <LiveReload />
       </body>
