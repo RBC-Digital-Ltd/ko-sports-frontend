@@ -951,12 +951,12 @@
     tsconfig-paths "^4.0.0"
     ws "^7.4.5"
 
-"@remix-run/express@2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@remix-run/express/-/express-2.4.1.tgz#7bcf76ba8b1e3783b7674258c25156c3a13c0b0c"
-  integrity sha512-BTFfKrETeU3zn18YvaWs78i+vyvckG/BeR/A7hSYyJTaRfpw9r5OWq/wGM6jaObG7u4ut64lcY9adhvyV7BBeQ==
+"@remix-run/express@2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@remix-run/express/-/express-2.5.0.tgz#b0560c8ddc16ef8dddf9fd8b90f7ead5fbecc294"
+  integrity sha512-cIwy6Gi2T9nmsov8K/DL4bR9FkMVzxhxkwlcth6T9GfUn+VTQh7eux6w30/RwWXUcpb8YTWbfM0W+GKyOHQgvw==
   dependencies:
-    "@remix-run/node" "2.4.1"
+    "@remix-run/node" "2.5.0"
 
 "@remix-run/node@2.4.1":
   version "2.4.1"
@@ -972,7 +972,7 @@
     source-map-support "^0.5.21"
     stream-slice "^0.1.2"
 
-"@remix-run/node@^2.5.0":
+"@remix-run/node@2.5.0", "@remix-run/node@^2.5.0":
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/@remix-run/node/-/node-2.5.0.tgz#e2a62aa2c537092f1852c6bdde018763fb875770"
   integrity sha512-TTW4U+GnreqSf08Muz9jOJ5h5jPAPZ+UnwjLrq2O22dNyXrEzz2zecOddQ0H9Uk4ALS0HIu5206nK0pGW0Vdsg==
@@ -1006,13 +1006,13 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.14.2.tgz#4d58f59908d9197ba3179310077f25c88e49ed17"
   integrity sha512-ACXpdMM9hmKZww21yEqWwiLws/UPLhNKvimN8RrYSqPSvB3ov7sLvAcfvaxePeLvccTQKGdkDIhLYApZVDFuKg==
 
-"@remix-run/serve@^2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@remix-run/serve/-/serve-2.4.1.tgz#6abf9ef3b9185ba5b4e3021cb20f7bb7ac3e83f1"
-  integrity sha512-GvIDkPjbMv6U8KJKyxhnTiwZpGXoO/IwJ9tN+b9RwTufMPL9Vi19p/uxptdeHDtCDXb4CRz+Id0izZD/CUrV2A==
+"@remix-run/serve@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@remix-run/serve/-/serve-2.5.0.tgz#ae2d0090b039d482417a684f5776c3cd40bc99fb"
+  integrity sha512-wrcYJQV8Jbx/8GM62GCLGWghuSZFQwL0RvkZOI2+zVV1lqGXYYJYWAR7JrjLF5GpMsYdfCFi3H9+Go9lpw3+cQ==
   dependencies:
-    "@remix-run/express" "2.4.1"
-    "@remix-run/node" "2.4.1"
+    "@remix-run/express" "2.5.0"
+    "@remix-run/node" "2.5.0"
     chokidar "^3.5.3"
     compression "^1.7.4"
     express "^4.17.1"
