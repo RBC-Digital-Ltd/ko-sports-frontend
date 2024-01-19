@@ -887,10 +887,10 @@
   dependencies:
     playwright "1.41.0"
 
-"@remix-run/css-bundle@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@remix-run/css-bundle/-/css-bundle-2.5.0.tgz#f0f8f279c99320cbea3afe528b544374ee595097"
-  integrity sha512-G57IFEFjte94YMBapbzzFrMnqIAAIf3qUNOsD7PC7VOiLW0AHd75yvq0cDc79zRaRthZhhYb3HkNkE8CsndfHA==
+"@remix-run/css-bundle@^2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@remix-run/css-bundle/-/css-bundle-2.5.1.tgz#0ac123cb89e7308b1fa129e0704901fb1ae4c7c5"
+  integrity sha512-QPeNvgD7fj4NmXB9CuGM5Mp0ZtM43dMeda8Ik3AUoQOMgMWb0d4jK4Cye6eoTGwJOron6XISKh0mq8MorucWEQ==
 
 "@remix-run/dev@^2.5.0":
   version "2.5.0"
