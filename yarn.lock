@@ -4652,10 +4652,10 @@ modern-ahocorasick@^1.0.0:
   resolved "https://registry.yarnpkg.com/modern-ahocorasick/-/modern-ahocorasick-1.0.1.tgz#dec373444f51b5458ac05216a8ec376e126dd283"
   integrity sha512-yoe+JbhTClckZ67b2itRtistFKf8yPYelHLc7e5xAwtNAXxM6wJTUx2C7QeVSJFDzKT7bCIFyBVybPMKvmB9AA==
 
-moderndash@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/moderndash/-/moderndash-3.9.0.tgz#f62f6c2ace2ba6155287f2d5dcf3f2c9433f7418"
-  integrity sha512-ym3arWmvUGbU5H2MK4WSJmOnmyYGNl5cATgjEC8mPFa/mXsa0FmZ5LwUJqTRmaJu/3JJfsIQmPAPGXEe7OFMKA==
+moderndash@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/moderndash/-/moderndash-3.9.1.tgz#66563aacb5ef7b9b5fc4275412e2ff78d9543f9a"
+  integrity sha512-k6+ux6wzH3lLDakZImMISaFpK7s0csQi5l2eNHBvYr03AuUvn+i2mzD75iDGABksaia9+7sfadvKPqKpM8yRUg==
   dependencies:
     hotscript "1.0.13"
 
