@@ -1,5 +1,7 @@
 # Welcome to Remix!
 
+![](https://api.checklyhq.com/v1/badges/checks/c55f1b7c-fe66-4a42-af0c-465e7056a5d7?style=flat&theme=default)
+
 - [Remix Docs](https://remix.run/docs)
 
 ## Development
