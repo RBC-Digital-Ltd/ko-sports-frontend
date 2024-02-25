@@ -13,8 +13,9 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import styles from "./tailwind.css";
-import { PublicEnv } from "./public-env";
+import { PublicEnv, getPublicEnv } from "./public-env";
 import { getPublicKeys } from "./environment.server";
+import { Auth0Provider } from "@auth0/auth0-react";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref
@@ -35,7 +36,7 @@ export function loader() {
   return json(getPublicKeys());
 }
 
-export default function App() {
+function Application() {
   const { publicKeys } = useLoaderData<typeof loader>();
   return (
     <html lang="en">
@@ -53,5 +54,16 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function App() {
+  return (
+    <Auth0Provider
+      domain={getPublicEnv("DOMAIN")}
+      clientId={getPublicEnv("CLIENT_ID")}
+    >
+      <Application />
+    </Auth0Provider>
   );
 }
