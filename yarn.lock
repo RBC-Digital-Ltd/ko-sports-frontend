@@ -970,12 +970,26 @@
   dependencies:
     "@remix-run/node" "2.7.2"
 
-"@remix-run/node@2.7.2", "@remix-run/node@^2.7.2":
+"@remix-run/node@2.7.2":
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/@remix-run/node/-/node-2.7.2.tgz#5efbc3c2015d0d36fea265afa9be413eb35e2c32"
   integrity sha512-smIWI9kNGDnY361WlDOTwxPfUw/KHcS7PCLjHlM/omx3ETD1Y2dc4Rt82LSJt0qsPSPA72ZOww08NoX+YGBvyQ==
   dependencies:
     "@remix-run/server-runtime" "2.7.2"
+    "@remix-run/web-fetch" "^4.4.2"
+    "@remix-run/web-file" "^3.1.0"
+    "@remix-run/web-stream" "^1.1.0"
+    "@web3-storage/multipart-parser" "^1.0.0"
+    cookie-signature "^1.1.0"
+    source-map-support "^0.5.21"
+    stream-slice "^0.1.2"
+
+"@remix-run/node@^2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@remix-run/node/-/node-2.8.0.tgz#f928326869054ae75e9d92e5e3d9b616f866907d"
+  integrity sha512-UGAckayyhw14v70O1Lcf75Nr/ipLOG5e20tMiMee96sCXWaHGHpv9VbAVoDXiVKqI3sw4dJarNc0qo794zwAbg==
+  dependencies:
+    "@remix-run/server-runtime" "2.8.0"
     "@remix-run/web-fetch" "^4.4.2"
     "@remix-run/web-file" "^3.1.0"
     "@remix-run/web-stream" "^1.1.0"
@@ -999,6 +1013,11 @@
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.15.1.tgz#221fd31a65186b9bc027b74573485fb3226dff7f"
   integrity sha512-zcU0gM3z+3iqj8UX45AmWY810l3oUmXM7uH4dt5xtzvMhRtYVhKGOmgOd1877dOPPepfCjUv57w+syamWIYe7w==
 
+"@remix-run/router@1.15.2":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.15.2.tgz#35726510d332ba5349c6398d13259d5da184553d"
+  integrity sha512-+Rnav+CaoTE5QJc4Jcwh5toUpnVLKYbpU6Ys0zqbakqbaLQHeglLVHPfxOiQqdNmUy5C2lXz5dwC6tQNX2JW2Q==
+
 "@remix-run/serve@^2.7.2":
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/@remix-run/serve/-/serve-2.7.2.tgz#7e40e5cf87994bb6cd60156f9ad8b56e5d9b51eb"
@@ -1019,6 +1038,18 @@
   integrity sha512-PGD1SPJttlYI3Nwe8ABk53gHCueWfZ2NOsKx7utD/lKRPFW2BqADpokzQXSzy4WTpk4drAmlagobGVIVH66Tmg==
   dependencies:
     "@remix-run/router" "1.15.1"
+    "@types/cookie" "^0.6.0"
+    "@web3-storage/multipart-parser" "^1.0.0"
+    cookie "^0.6.0"
+    set-cookie-parser "^2.4.8"
+    source-map "^0.7.3"
+
+"@remix-run/server-runtime@2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-2.8.0.tgz#22acf79708c22561117c4439357951aa4a7085d6"
+  integrity sha512-bb6rRefxEqA1fHGUo2i2s1uMztYqQlxupVCVsAs+sUkzTXtORJW+b0oFIKf5yWyaarBJ4zeLyoPsAMBqVX8P3w==
+  dependencies:
+    "@remix-run/router" "1.15.2"
     "@types/cookie" "^0.6.0"
     "@web3-storage/multipart-parser" "^1.0.0"
     cookie "^0.6.0"
