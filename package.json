@@ -28,7 +28,7 @@
   "devDependencies": {
     "@flydotio/dockerfile": "^0.5.4",
     "@percy/cli": "^1.28.2",
-    "@playwright/test": "^1.42.1",
+    "@playwright/test": "^1.43.0",
     "@remix-run/dev": "^2.8.1",
     "@tailwindcss/forms": "^0.5.7",
     "@types/express": "^4.17.21",
