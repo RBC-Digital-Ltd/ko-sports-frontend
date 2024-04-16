@@ -26,7 +26,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.5.4",
+    "@flydotio/dockerfile": "^0.5.5",
     "@percy/cli": "^1.28.3",
     "@playwright/test": "^1.43.1",
     "@remix-run/dev": "^2.8.1",
