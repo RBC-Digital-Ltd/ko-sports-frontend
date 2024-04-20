@@ -27,3 +27,5 @@ primary_region = "lhr"
 
 [env]
   KO_VERSION = "not set"
+  DOMAIN = "celadon.eu.auth0.com"
+  CLIENT_ID = "zq2JXmbFyrDNNgr6VPy8sdgKtA9ASwR4"
