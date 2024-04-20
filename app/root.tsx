@@ -1,6 +1,12 @@
-import { captureRemixErrorBoundaryError } from "@sentry/remix";
+// Sentry provides a type for Remix v2 MetaFunction parameters
+// so you can access `data.sentryTrace` and `data.sentryBaggage` alongside other data from loader.
+import {
+  captureRemixErrorBoundaryError,
+  type SentryMetaArgs,
+} from "@sentry/remix";
+
 import { cssBundleHref } from "@remix-run/css-bundle";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -35,6 +41,19 @@ export const ErrorBoundary = () => {
 export function loader() {
   return json(getPublicKeys());
 }
+
+export const meta = ({ data }: SentryMetaArgs<MetaFunction<typeof loader>>) => {
+  return [
+    {
+      name: "sentry-trace",
+      content: data.sentryTrace,
+    },
+    {
+      name: "baggage",
+      content: data.sentryBaggage,
+    },
+  ];
+};
 
 function Application() {
   const { publicKeys } = useLoaderData<typeof loader>();

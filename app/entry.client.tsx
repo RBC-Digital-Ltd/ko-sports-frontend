@@ -16,20 +16,21 @@ Sentry.init({
   tracesSampleRate: 1,
   replaysSessionSampleRate: 0.1,
   replaysOnErrorSampleRate: 1,
+  profilesSampleRate: 1.0,
 
   integrations: [
-    new Sentry.BrowserTracing({
-      routingInstrumentation: Sentry.remixRouterInstrumentation(
-        useEffect,
-        useLocation,
-        useMatches,
-      ),
+    Sentry.browserTracingIntegration({
+      useEffect,
+      useLocation,
+      useMatches,
     }),
-    new Sentry.Replay(),
-    new Sentry.Feedback({
+    Sentry.replayIntegration(),
+    Sentry.feedbackIntegration({
       // Additional SDK configuration goes in here, for example:
       colorScheme: "light",
     }),
+    // Add browser profiling integration to the list of integrations
+    new Sentry.BrowserProfilingIntegration(),
   ],
 });
 

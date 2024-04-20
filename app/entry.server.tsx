@@ -1,4 +1,5 @@
 import * as Sentry from "@sentry/remix";
+import { nodeProfilingIntegration } from "@sentry/profiling-node";
 /**
  * By default, Remix will handle generating the HTTP Response for you.
  * You are free to delete this file if you'd like to, but if you ever want it revealed again, you can run `npx remix reveal` ✨
@@ -28,6 +29,11 @@ export function handleError(
 Sentry.init({
   dsn: "https://91ad695deec04a24c99fd86cd89d6e9a@o369886.ingest.sentry.io/4506495702925312",
   tracesSampleRate: 1,
+  profilesSampleRate: 1.0, // Profiling sample rate is relative to tracesSampleRate
+  integrations: [
+    // Add profiling integration to list of integrations
+    nodeProfilingIntegration(),
+  ],
 });
 
 const ABORT_DELAY = 5_000;
