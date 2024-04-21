@@ -1,8 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
 import { getPublicEnv } from "../public-env";
-import LoginButton from "../components/LoginButton";
-import LogoutButton from "../components/LogoutButton";
-import Profile from "../components/Profile";
+import { Form } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -27,11 +25,11 @@ export default function Index() {
         Throw error
       </button>
       <ul>
+        <li>Log In</li>
         <li>
-          <LoginButton />
-        </li>
-        <li>
-          <LogoutButton />
+          <Form action="/auth/logout" method="post">
+            <button>Logout</button>
+          </Form>
         </li>
         <li>
           <a
@@ -57,7 +55,6 @@ export default function Index() {
           </a>
         </li>
       </ul>
-      <Profile />
     </div>
   );
 }

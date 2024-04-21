@@ -19,9 +19,8 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import styles from "./tailwind.css";
-import { PublicEnv, getPublicEnv } from "./public-env";
+import { PublicEnv } from "./public-env";
 import { getPublicKeys } from "./environment.server";
-import { Auth0Provider } from "@auth0/auth0-react";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref
@@ -77,12 +76,5 @@ function Application() {
 }
 
 export default function App() {
-  return (
-    <Auth0Provider
-      domain={getPublicEnv("DOMAIN")}
-      clientId={getPublicEnv("CLIENT_ID")}
-    >
-      <Application />
-    </Auth0Provider>
-  );
+  return <Application />;
 }
