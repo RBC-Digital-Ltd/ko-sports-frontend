@@ -1185,13 +1185,13 @@
     "@sentry/types" "7.112.2"
     "@sentry/utils" "7.112.2"
 
-"@sentry/profiling-node@^7.112.2":
-  version "7.112.2"
-  resolved "https://registry.yarnpkg.com/@sentry/profiling-node/-/profiling-node-7.112.2.tgz#aca3c5f63850ee9314fa06c31220f1c8f1293dfb"
-  integrity sha512-qCLJjQHW5mkDuh12MuqVVZfhdC20pJ4Vlmo/VO8orsDCcdVxDyO2N5SSe54epcBtuzUYOBsjomXyGiXw8sd2dA==
+"@sentry/profiling-node@^7.113.0":
+  version "7.113.0"
+  resolved "https://registry.yarnpkg.com/@sentry/profiling-node/-/profiling-node-7.113.0.tgz#2cf0740a9338d31d92b4e8dd8d2a5f81c0e2193c"
+  integrity sha512-ABEBLNaFwKIDZHPmvlFPCyrhdKkFRYyGeTijKuQ/fU0q81CCNnh+FJphfJTh9Js1afJ9ShFxk2KZNGzipyo8Zw==
   dependencies:
     detect-libc "^2.0.2"
-    node-abi "^3.52.0"
+    node-abi "^3.61.0"
 
 "@sentry/react@7.112.2":
   version "7.112.2"
@@ -4946,10 +4946,10 @@ negotiator@0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
-node-abi@^3.52.0:
-  version "3.60.0"
-  resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-3.60.0.tgz#a325b13b3c401c2230202897559fbf0b5f9a90ac"
-  integrity sha512-zcGgwoXbzw9NczqbGzAWL/ToDYAxv1V8gL1D67ClbdkIfeeDBbY0GelZtC25ayLvVjr2q2cloHeQV1R0QAWqRQ==
+node-abi@^3.61.0:
+  version "3.62.0"
+  resolved "https://registry.yarnpkg.com/node-abi/-/node-abi-3.62.0.tgz#017958ed120f89a3a14a7253da810f5d724e3f36"
+  integrity sha512-CPMcGa+y33xuL1E0TcNIu4YyaZCxnnvkVaEXrsosR3FxN+fV8xvb7Mzpb7IgKler10qeMkE6+Dp8qJhpzdq35g==
   dependencies:
     semver "^7.3.5"
 
