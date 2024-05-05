@@ -9,6 +9,7 @@ const environmentSchema = z.object({
   DOMAIN: z.string().min(1).default(""),
   CLIENT_ID: z.string().min(1).default(""),
   CLIENT_SECRET: z.string().min(1).default(""),
+  AUDIENCE: z.string().min(1).default(""),
 });
 
 export const environment = () => environmentSchema.parse(process.env);
@@ -20,6 +21,7 @@ export const getPublicKeys = () => {
       "DOMAIN",
       "CLIENT_ID",
       "CLIENT_SECRET",
+      "AUDIENCE",
     ]),
   };
 };

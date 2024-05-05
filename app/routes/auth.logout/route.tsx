@@ -8,7 +8,8 @@ import { getPublicEnv } from "../../public-env";
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   const session = await getSession(request.headers.get("Cookie"));
-  const logoutURL = new URL(`${getPublicEnv("DOMAIN")}/v2/logout`);
+  console.log(getPublicEnv("DOMAIN"));
+  const logoutURL = new URL(`https://${getPublicEnv("DOMAIN")}/v2/logout`);
 
   logoutURL.searchParams.set("client_id", getPublicEnv("CLIENT_ID"));
   logoutURL.searchParams.set("returnTo", "http://localhost:3000");
