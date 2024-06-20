@@ -2,6 +2,7 @@
 // so you can access `data.sentryTrace` and `data.sentryBaggage` alongside other data from loader.
 import {
   captureRemixErrorBoundaryError,
+  withSentry,
   type SentryMetaArgs,
 } from "@sentry/remix";
 
@@ -75,6 +76,8 @@ function Application() {
   );
 }
 
-export default function App() {
+function App() {
   return <Application />;
 }
+
+export default withSentry(App);

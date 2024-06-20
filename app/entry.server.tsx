@@ -28,6 +28,7 @@ export function handleError(
 
 Sentry.init({
   dsn: "https://91ad695deec04a24c99fd86cd89d6e9a@o369886.ingest.sentry.io/4506495702925312",
+  autoInstrumentRemix: true,
   tracesSampleRate: 1,
   profilesSampleRate: 1.0, // Profiling sample rate is relative to tracesSampleRate
   integrations: [
