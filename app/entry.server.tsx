@@ -23,7 +23,7 @@ export function handleError(
   error: unknown,
   { request }: LoaderFunctionArgs | ActionFunctionArgs,
 ) {
-  Sentry.captureRemixServerException(error, "remix.server", request);
+  Sentry.captureRemixServerException(error, "remix.server", request, true);
 }
 
 Sentry.init({
