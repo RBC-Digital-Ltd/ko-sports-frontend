@@ -78,8 +78,8 @@ jobs:
       - name: Get Package Version
         run: echo "VERSION_NUMBER=$(cat package.json | jq -r '.version')" >> $GITHUB_ENV
 
-      - name: TOML Editor V2
-        uses: colathro/toml-editor@1.1.1
+      - name: Edit TOML
+        uses: rahulp959/toml-editor@v1.0.1
         with:
           file: "fly.toml"
           key: "env.KO_VERSION"
