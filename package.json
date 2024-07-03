@@ -14,7 +14,7 @@
   "dependencies": {
     "@remix-run/css-bundle": "^2.10.0",
     "@remix-run/node": "^2.9.2",
-    "@remix-run/react": "^2.10.0",
+    "@remix-run/react": "^2.10.1",
     "@remix-run/serve": "^2.10.0",
     "@remix-run/server-runtime": "^2.9.2",
     "@sentry/profiling-node": "^8.13.0",
