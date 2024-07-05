@@ -1273,7 +1273,7 @@
     source-map "^0.7.3"
     turbo-stream "2.2.0"
 
-"@remix-run/server-runtime@2.10.1", "@remix-run/server-runtime@^2.9.2":
+"@remix-run/server-runtime@2.10.1":
   version "2.10.1"
   resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-2.10.1.tgz#c94b7e27bd6eeb9fa7e1ada89ef0a986fea001ee"
   integrity sha512-jINOmovnwPdllhOm2PU0iTDP9MXwKLit9Ifq3EWjdqs+Bu1zwA3TTRDRX6x9V0OGpM3wiByd80zEmHZ5sZy7hQ==
@@ -1286,7 +1286,7 @@
     source-map "^0.7.3"
     turbo-stream "2.2.0"
 
-"@remix-run/server-runtime@2.10.2":
+"@remix-run/server-runtime@2.10.2", "@remix-run/server-runtime@^2.10.2":
   version "2.10.2"
   resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-2.10.2.tgz#ba6da3c211f4a68ef54c2abd17d3109a9308d50c"
   integrity sha512-c6CzKw4WBP4FkPnz63ua7g73/P1v34Uho2C44SZZf8IOVCGzEM9liLq6slDivn0m/UbyQnXThdXmsVjFcobmZg==
