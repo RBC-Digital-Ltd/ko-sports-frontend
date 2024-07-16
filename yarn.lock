@@ -1137,10 +1137,10 @@
     "@opentelemetry/instrumentation" "^0.49 || ^0.50 || ^0.51 || ^0.52.0"
     "@opentelemetry/sdk-trace-base" "^1.22"
 
-"@remix-run/css-bundle@^2.10.2":
-  version "2.10.2"
-  resolved "https://registry.yarnpkg.com/@remix-run/css-bundle/-/css-bundle-2.10.2.tgz#bf0e21e616490cb5f891a048ee28bf4af12622dc"
-  integrity sha512-rtnDV62iR6l+l70BcQeDIGPkaF0WZoscxD0FXPR+IrBXMcfz44T3PcnmXEeY0bUmBc3VXkBOKWSJzKU4m3gYFA==
+"@remix-run/css-bundle@^2.10.3":
+  version "2.10.3"
+  resolved "https://registry.yarnpkg.com/@remix-run/css-bundle/-/css-bundle-2.10.3.tgz#9a943332fa4c29322a7463e73bb85819a3848895"
+  integrity sha512-FWTHe0kphAoK85kY92BaLuwNjyn9t2Gd1/MebR1lEzG2dDm80tThJ2tpZMCOn1zPFAaLOGn3fXnywYMYDzyBfg==
 
 "@remix-run/dev@^2.10.2":
   version "2.10.2"
