@@ -1245,12 +1245,12 @@
     react-router-dom "6.25.0"
     turbo-stream "2.2.0"
 
-"@remix-run/router@1.18.0", "@remix-run/router@1.x":
+"@remix-run/router@1.18.0":
   version "1.18.0"
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.18.0.tgz#20b033d1f542a100c1d57cfd18ecf442d1784732"
   integrity sha512-L3jkqmqoSVBVKHfpGZmLrex0lxR5SucGA0sUfFzGctehw+S/ggL9L/0NnC5mw6P8HUWpFZ3nQw3cRApjjWx9Sw==
 
-"@remix-run/router@1.19.0":
+"@remix-run/router@1.19.0", "@remix-run/router@1.x":
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.19.0.tgz#745dbffbce67f05386d57ca22c51dfd85c979593"
   integrity sha512-zDICCLKEwbVYTS6TjYaWtHXxkdoUvD/QXvyVZjGCsWz5vyH7aFeONlPffPdW+Y/t6KT0MgXb2Mfjun9YpWN1dA==
@@ -1269,7 +1269,7 @@
     morgan "^1.10.0"
     source-map-support "^0.5.21"
 
-"@remix-run/server-runtime@2.10.3", "@remix-run/server-runtime@^2.10.2":
+"@remix-run/server-runtime@2.10.3":
   version "2.10.3"
   resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-2.10.3.tgz#9c01d9a0552658939c0769f988939e8c186a7981"
   integrity sha512-vUl5jONUI6Lj0ICg9FSRFhoPzQdZ/7dpT1m7ID13DF5BEeF3t/9uCJS61XXWgQ/JEu7YRiwvZiwSRTrgM7zeWw==
@@ -1282,7 +1282,7 @@
     source-map "^0.7.3"
     turbo-stream "2.2.0"
 
-"@remix-run/server-runtime@2.11.0":
+"@remix-run/server-runtime@2.11.0", "@remix-run/server-runtime@^2.11.0":
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-2.11.0.tgz#1e25c03a5cae6cba1ff317c1dbfd096bd28bcc9f"
   integrity sha512-9fU4Nyvplge6dlyTl90qvAq8fiWWZ922xtJUIWAkFpSOGIcIUIdlqUVSpfsYU6l2e6JQcKr8C14LfjgciBUX+A==
