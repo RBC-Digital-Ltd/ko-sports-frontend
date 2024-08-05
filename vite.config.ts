@@ -20,6 +20,9 @@ export default defineConfig({
       // you don't need to specify these options
       org: "ray-parkar",
       project: "ko-sports-frontend",
+      sourcemaps: {
+        filesToDeleteAfterUpload: ["**/*.map"],
+      },
     }),
   ],
   build: {

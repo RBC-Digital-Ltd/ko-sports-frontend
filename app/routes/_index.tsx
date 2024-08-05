@@ -1,6 +1,7 @@
-import { json, type MetaFunction } from "@remix-run/node";
+import { json, LoaderFunctionArgs, type MetaFunction } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
 import Navigation from "~/components/Navigation";
+import { authenticator } from "~/utils/auth.server";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,8 +10,10 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-export const loader = () => {
-  return json({ KO_VERSION: process.env.KO_VERSION });
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  const user = await authenticator.isAuthenticated(request);
+  console.log(user);
+  return json({ KO_VERSION: process.env.KO_VERSION, user });
 };
 
 export default function Index() {
