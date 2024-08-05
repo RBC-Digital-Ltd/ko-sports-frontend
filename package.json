@@ -5,7 +5,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build --sourcemap && sentry-upload-sourcemaps --org ray-parkar --project ko-sports-frontend",
+    "build": "remix vite:build",
     "dev": "remix vite:dev --manual",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
@@ -34,6 +34,7 @@
     "@percy/cli": "^1.29.1",
     "@playwright/test": "^1.45.3",
     "@remix-run/dev": "^2.11.0",
+    "@sentry/vite-plugin": "^2.21.1",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
     "@types/express": "^4.17.21",
