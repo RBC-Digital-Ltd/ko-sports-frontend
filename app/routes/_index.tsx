@@ -1,6 +1,5 @@
-import { type MetaFunction } from "@remix-run/node";
-import { getPublicEnv } from "../public-env";
-import { Form } from "@remix-run/react";
+import { json, type MetaFunction } from "@remix-run/node";
+import { Form, useLoaderData } from "@remix-run/react";
 import Navigation from "~/components/Navigation";
 
 export const meta: MetaFunction = () => {
@@ -10,14 +9,19 @@ export const meta: MetaFunction = () => {
   ];
 };
 
+export const loader = () => {
+  return json({ KO_VERSION: process.env.KO_VERSION });
+};
+
 export default function Index() {
+  const data = useLoaderData<typeof loader>();
   return (
     <>
       <Navigation />
       <div className="px-3">
         <h1 className="prose-2xl">Welcome to Remix</h1>
         <p>
-          KO Sports Version: <strong>{getPublicEnv("KO_VERSION")}</strong>
+          KO Sports Version: <strong>{data.KO_VERSION}</strong>
         </p>
         <button
           type="button"

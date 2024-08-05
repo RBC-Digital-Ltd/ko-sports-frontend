@@ -20,6 +20,10 @@
     "noEmit": true,
 
     // Let's not check our library types
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    // Vite config
+    "types": ["@remix-run/node", "vite/client"],
+    "module": "ESNext"
   }
 }

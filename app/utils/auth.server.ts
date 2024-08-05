@@ -1,7 +1,6 @@
 // app/utils/auth.server.ts
 import { Authenticator } from "remix-auth";
 import { Auth0Strategy } from "remix-auth-auth0";
-import { getPublicEnv } from "../public-env";
 import { sessionStorage } from "../services/session.server";
 
 // Create an instance of the authenticator, pass a generic with what your
@@ -11,10 +10,10 @@ export const authenticator = new Authenticator<string>(sessionStorage);
 const auth0Strategy = new Auth0Strategy(
   {
     callbackURL: "http://localhost:3000/auth/callback",
-    clientID: getPublicEnv("CLIENT_ID"),
-    clientSecret: getPublicEnv("CLIENT_SECRET"),
-    domain: getPublicEnv("DOMAIN"),
-    audience: getPublicEnv("AUDIENCE"),
+    clientID: process.env.CLIENT_ID || "",
+    clientSecret: process.env.CLIENT_SECRET || "",
+    domain: process.env.DOMAIN || "",
+    audience: process.env.AUDIENCE,
   },
   async ({ accessToken, profile }) => {
     // Confirm if we have a user, if not, create one.
