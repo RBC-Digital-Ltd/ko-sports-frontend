@@ -1,18 +1,25 @@
-import { ActionFunctionArgs, json } from "@remix-run/node";
+import {
+  ActionFunctionArgs,
+  json,
+  LoaderFunctionArgs,
+  redirect,
+} from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import { authenticator } from "~/utils/auth.server";
 
 export default function UpdateProfile() {
+  const data = useLoaderData<typeof loader>();
   return (
     <div>
       <h1>Update Profile</h1>
       <form method="post">
         <label>
           First Name
-          <input name="firstName" type="text" />
+          <input name="firstName" type="text" defaultValue={data.first_name} />
         </label>
         <label>
           Last Name
-          <input name="lastName" type="text" />
+          <input name="lastName" type="text" defaultValue={data.last_name} />
         </label>
         <button type="submit">Complete Profile</button>
       </form>
@@ -20,21 +27,35 @@ export default function UpdateProfile() {
   );
 }
 
+export async function loader({ request }: LoaderFunctionArgs) {
+  const { accessToken } = await authenticator.isAuthenticated(request, {
+    failureRedirect: "/login",
+  });
+
+  const profileRequest = await fetch(
+    "http://localhost:4000/dev/auth/check-profile",
+    {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    },
+  );
+
+  const data = await profileRequest.json();
+
+  return json(data);
+}
+
 export async function action({ request }: ActionFunctionArgs) {
-  console.log("action");
-  const token = await authenticator.isAuthenticated(request);
+  const user = await authenticator.isAuthenticated(request);
   const formData = await request.formData();
+  const updates = Object.fromEntries(formData);
 
   await fetch("http://localhost:4000/dev/auth/update-profile", {
     method: "PUT",
     headers: {
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${user?.accessToken}`,
     },
-    body: JSON.stringify({
-      firstName: formData.get("firstName"),
-      lastName: formData.get("lastName"),
-    }),
+    body: JSON.stringify(updates),
   });
 
-  return json({ ok: true });
+  return redirect("/");
 }
