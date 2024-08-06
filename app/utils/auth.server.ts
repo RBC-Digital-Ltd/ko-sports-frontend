@@ -1,11 +1,16 @@
 // app/utils/auth.server.ts
 import { Authenticator } from "remix-auth";
-import { Auth0Strategy } from "remix-auth-auth0";
+import { Auth0Profile, Auth0Strategy } from "remix-auth-auth0";
 import { sessionStorage } from "../services/session.server";
+
+export type User = {
+  accessToken: string;
+  profile: Auth0Profile;
+};
 
 // Create an instance of the authenticator, pass a generic with what your
 // strategies will return and will be stored in the session
-export const authenticator = new Authenticator<string>(sessionStorage);
+export const authenticator = new Authenticator<User>(sessionStorage);
 
 const auth0Strategy = new Auth0Strategy(
   {
@@ -36,7 +41,7 @@ const auth0Strategy = new Auth0Strategy(
       });
     }
 
-    return accessToken;
+    return { accessToken, profile };
   },
 );
 

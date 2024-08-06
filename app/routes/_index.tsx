@@ -20,7 +20,7 @@ export default function Index() {
   const data = useLoaderData<typeof loader>();
   return (
     <>
-      <Navigation />
+      <Navigation user={data.user} />
       <div className="px-3">
         <h1 className="prose-2xl">Welcome to Remix</h1>
         <p>

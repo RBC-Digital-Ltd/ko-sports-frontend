@@ -1,11 +1,11 @@
 // app/routes/auth/logout.ts
-import type { ActionFunctionArgs } from "@remix-run/node";
+import type { LoaderFunctionArgs } from "@remix-run/node";
 
 import { redirect } from "@remix-run/node";
 
 import { destroySession, getSession } from "../../services/session.server";
 
-export const action = async ({ request }: ActionFunctionArgs) => {
+export const loader = async ({ request }: LoaderFunctionArgs) => {
   const session = await getSession(request.headers.get("Cookie"));
   const logoutURL = new URL(`https://${process.env.DOMAIN}/v2/logout`);
 

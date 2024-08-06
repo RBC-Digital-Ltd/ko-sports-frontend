@@ -2,9 +2,9 @@ import { LoaderFunctionArgs, redirect } from "@remix-run/node";
 import { authenticator } from "~/utils/auth.server";
 
 export const loader = async (args: LoaderFunctionArgs) => {
-  const token = await authenticator.isAuthenticated(args.request);
+  const user = await authenticator.isAuthenticated(args.request);
   const request = await fetch("http://localhost:4000/dev/auth/check-profile", {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${user?.accessToken}` },
   });
 
   if (request.status === 404) {
