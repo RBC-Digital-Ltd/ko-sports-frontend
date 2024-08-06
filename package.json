@@ -14,7 +14,7 @@
   "dependencies": {
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.5",
-    "@remix-run/node": "^2.9.2",
+    "@remix-run/node": "^2.11.1",
     "@remix-run/react": "^2.11.0",
     "@remix-run/serve": "^2.11.0",
     "@remix-run/server-runtime": "^2.10.2",
