@@ -15,7 +15,7 @@
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.5",
     "@remix-run/node": "^2.9.2",
-    "@remix-run/react": "^2.11.0",
+    "@remix-run/react": "^2.11.1",
     "@remix-run/serve": "^2.11.1",
     "@remix-run/server-runtime": "^2.10.2",
     "@sentry/profiling-node": "^8.23.0",
