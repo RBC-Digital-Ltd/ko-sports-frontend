@@ -1655,7 +1655,7 @@
     morgan "^1.10.0"
     source-map-support "^0.5.21"
 
-"@remix-run/server-runtime@2.11.0", "@remix-run/server-runtime@^2.10.2":
+"@remix-run/server-runtime@2.11.0":
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-2.11.0.tgz#1e25c03a5cae6cba1ff317c1dbfd096bd28bcc9f"
   integrity sha512-9fU4Nyvplge6dlyTl90qvAq8fiWWZ922xtJUIWAkFpSOGIcIUIdlqUVSpfsYU6l2e6JQcKr8C14LfjgciBUX+A==
@@ -1668,7 +1668,7 @@
     source-map "^0.7.3"
     turbo-stream "2.2.0"
 
-"@remix-run/server-runtime@2.11.1":
+"@remix-run/server-runtime@2.11.1", "@remix-run/server-runtime@^2.11.1":
   version "2.11.1"
   resolved "https://registry.yarnpkg.com/@remix-run/server-runtime/-/server-runtime-2.11.1.tgz#439bdc0eb1eefed7ed99e9b111906328a41974d6"
   integrity sha512-j3AlrZul0javvPR6ZWdN32/l12t1E90sLeZI/k+4HpT0ifjqJVg8uG6alRJ0LLN9ae5BERYEslUebUqdfejSkQ==
