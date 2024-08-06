@@ -1928,14 +1928,6 @@
     "@sentry/cli-win32-i686" "2.33.1"
     "@sentry/cli-win32-x64" "2.33.1"
 
-"@sentry/core@8.23.0":
-  version "8.23.0"
-  resolved "https://registry.yarnpkg.com/@sentry/core/-/core-8.23.0.tgz#76a46f5295857eebd8ec7d9be9341df31e0b66e3"
-  integrity sha512-o0tHpxwi5WxjaQPtY+BPkG8FliM4QB91QKoi2QclWvR9t9jUgMWZ4ikziybNiKICZRXtN9B6wSBWlPVWfsiN6A==
-  dependencies:
-    "@sentry/types" "8.23.0"
-    "@sentry/utils" "8.23.0"
-
 "@sentry/core@8.24.0":
   version "8.24.0"
   resolved "https://registry.yarnpkg.com/@sentry/core/-/core-8.24.0.tgz#63fd159c69e897e3a3d1c260e49824f7d444352a"
@@ -1943,42 +1935,6 @@
   dependencies:
     "@sentry/types" "8.24.0"
     "@sentry/utils" "8.24.0"
-
-"@sentry/node@8.23.0":
-  version "8.23.0"
-  resolved "https://registry.yarnpkg.com/@sentry/node/-/node-8.23.0.tgz#d3e62a19a755b3dc32bf02d5363b5fd3e703eeb5"
-  integrity sha512-Ys1A5XII74TWG07q/Y2K+fQoatX2sEiTPHLzLyKjsr1nOL6ANnyz+xnWAuYpF5RNa5R39vgJSwvJTR3S0+DnKw==
-  dependencies:
-    "@opentelemetry/api" "^1.9.0"
-    "@opentelemetry/context-async-hooks" "^1.25.1"
-    "@opentelemetry/core" "^1.25.1"
-    "@opentelemetry/instrumentation" "^0.52.1"
-    "@opentelemetry/instrumentation-connect" "0.38.0"
-    "@opentelemetry/instrumentation-express" "0.41.1"
-    "@opentelemetry/instrumentation-fastify" "0.38.0"
-    "@opentelemetry/instrumentation-graphql" "0.42.0"
-    "@opentelemetry/instrumentation-hapi" "0.40.0"
-    "@opentelemetry/instrumentation-http" "0.52.1"
-    "@opentelemetry/instrumentation-ioredis" "0.42.0"
-    "@opentelemetry/instrumentation-koa" "0.42.0"
-    "@opentelemetry/instrumentation-mongodb" "0.46.0"
-    "@opentelemetry/instrumentation-mongoose" "0.40.0"
-    "@opentelemetry/instrumentation-mysql" "0.40.0"
-    "@opentelemetry/instrumentation-mysql2" "0.40.0"
-    "@opentelemetry/instrumentation-nestjs-core" "0.39.0"
-    "@opentelemetry/instrumentation-pg" "0.43.0"
-    "@opentelemetry/instrumentation-redis-4" "0.41.0"
-    "@opentelemetry/resources" "^1.25.1"
-    "@opentelemetry/sdk-trace-base" "^1.25.1"
-    "@opentelemetry/semantic-conventions" "^1.25.1"
-    "@prisma/instrumentation" "5.17.0"
-    "@sentry/core" "8.23.0"
-    "@sentry/opentelemetry" "8.23.0"
-    "@sentry/types" "8.23.0"
-    "@sentry/utils" "8.23.0"
-    import-in-the-middle "^1.11.0"
-  optionalDependencies:
-    opentelemetry-instrumentation-fetch-node "1.2.3"
 
 "@sentry/node@8.24.0":
   version "8.24.0"
@@ -2016,15 +1972,6 @@
   optionalDependencies:
     opentelemetry-instrumentation-fetch-node "1.2.3"
 
-"@sentry/opentelemetry@8.23.0":
-  version "8.23.0"
-  resolved "https://registry.yarnpkg.com/@sentry/opentelemetry/-/opentelemetry-8.23.0.tgz#75dd763ae70e749573f775efb1307f1cdce6190d"
-  integrity sha512-qBDCVHpFAhyV7iZDz4cLpx7U1SBb/MynCwEuLWfK4yojpIihPcxhbJENxjJvsoc/I9img4wx8nJ34G9xpBlOag==
-  dependencies:
-    "@sentry/core" "8.23.0"
-    "@sentry/types" "8.23.0"
-    "@sentry/utils" "8.23.0"
-
 "@sentry/opentelemetry@8.24.0":
   version "8.24.0"
   resolved "https://registry.yarnpkg.com/@sentry/opentelemetry/-/opentelemetry-8.24.0.tgz#d207ceff70c3659bd5858503e4570cfb85a867e9"
@@ -2034,15 +1981,15 @@
     "@sentry/types" "8.24.0"
     "@sentry/utils" "8.24.0"
 
-"@sentry/profiling-node@^8.23.0":
-  version "8.23.0"
-  resolved "https://registry.yarnpkg.com/@sentry/profiling-node/-/profiling-node-8.23.0.tgz#147b412c6843622edb27155e19877ce493beadcb"
-  integrity sha512-rBAngeZ/ZsGBqFpU5OEVDSYzOL52g7HqTZHAvDWGX2FOpfW93gaw7uXrG8EnwwALYjiZFQVV1HFE/ew/ckybSw==
+"@sentry/profiling-node@^8.24.0":
+  version "8.24.0"
+  resolved "https://registry.yarnpkg.com/@sentry/profiling-node/-/profiling-node-8.24.0.tgz#5393223b317d4fa6604ef4efefcddf22109298c1"
+  integrity sha512-nn3OGaISad8KnwXUW8K/vGcUHnxHbsXXxK17exYiHUc7r2Oo3mVv/MjtP2Gx9GBbsholYsSGIB0uH9E2VGd2kw==
   dependencies:
-    "@sentry/core" "8.23.0"
-    "@sentry/node" "8.23.0"
-    "@sentry/types" "8.23.0"
-    "@sentry/utils" "8.23.0"
+    "@sentry/core" "8.24.0"
+    "@sentry/node" "8.24.0"
+    "@sentry/types" "8.24.0"
+    "@sentry/utils" "8.24.0"
     detect-libc "^2.0.2"
     node-abi "^3.61.0"
 
@@ -2075,22 +2022,10 @@
     opentelemetry-instrumentation-remix "0.7.1"
     yargs "^17.6.0"
 
-"@sentry/types@8.23.0":
-  version "8.23.0"
-  resolved "https://registry.yarnpkg.com/@sentry/types/-/types-8.23.0.tgz#02912ee3be3bc79a40d2d5313d035b524de27d7e"
-  integrity sha512-oJbZ04chsz3Gqro3GJuAAcEsJ7RVjk3k4TvAMxmhN5tQUqwvKFtvWjfskcF75ECzY+8Qge6PI7eXoibkhjx8sg==
-
 "@sentry/types@8.24.0":
   version "8.24.0"
   resolved "https://registry.yarnpkg.com/@sentry/types/-/types-8.24.0.tgz#c876ec4c0e50fc291d1d7d18d25b99beb1d88692"
   integrity sha512-5QWXARoFrvTvnS19ip+ha0x4nWIv/RvoCTnqCsgrNTjypbk1+KMSMQQhGMo8OuEBFhdGyTs1BqfxVV82URHh3w==
-
-"@sentry/utils@8.23.0":
-  version "8.23.0"
-  resolved "https://registry.yarnpkg.com/@sentry/utils/-/utils-8.23.0.tgz#532fb96a645345e2492eb1338b823b95f1078ac7"
-  integrity sha512-g+rkk+vFQnAz7xHGUTHXybA9qFdp1mtv3JGXtFKlLxPm8bKpzbBlJA3FiX4E7ai/Ksbv0N+K7c5fDth3LX3wAA==
-  dependencies:
-    "@sentry/types" "8.23.0"
 
 "@sentry/utils@8.24.0":
   version "8.24.0"
