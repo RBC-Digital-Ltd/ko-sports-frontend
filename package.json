@@ -19,7 +19,7 @@
     "@remix-run/serve": "^2.11.1",
     "@remix-run/server-runtime": "^2.10.2",
     "@sentry/profiling-node": "^8.23.0",
-    "@sentry/remix": "^8.23.0",
+    "@sentry/remix": "^8.24.0",
     "isbot": "5.1.14",
     "moderndash": "^3.12.0",
     "react": "^18.3.1",
