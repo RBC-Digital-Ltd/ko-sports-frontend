@@ -6,16 +6,24 @@ import {
   type SentryMetaArgs,
 } from "@sentry/remix";
 
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type {
+  LinksFunction,
+  LoaderFunctionArgs,
+  MetaFunction,
+} from "@remix-run/node";
 import {
+  json,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useRouteError,
+  useRouteLoaderData,
 } from "@remix-run/react";
 import styles from "./tailwind.css?url";
+import { authenticator } from "./utils/auth.server";
+import Navigation from "./components/Navigation";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
@@ -25,7 +33,10 @@ export const ErrorBoundary = () => {
   return <div>Something went wrong</div>;
 };
 
-export function loader() {}
+export async function loader({ request }: LoaderFunctionArgs) {
+  const user = await authenticator.isAuthenticated(request);
+  return json({ user });
+}
 
 export const meta = ({ data }: SentryMetaArgs<MetaFunction<typeof loader>>) => {
   return [
@@ -40,7 +51,8 @@ export const meta = ({ data }: SentryMetaArgs<MetaFunction<typeof loader>>) => {
   ];
 };
 
-function Application() {
+export function Layout({ children }: { children: React.ReactNode }) {
+  const data = useRouteLoaderData<typeof loader>("root");
   return (
     <html lang="en">
       <head>
@@ -50,16 +62,18 @@ function Application() {
         <Links />
       </head>
       <body>
-        <Outlet />
-        <ScrollRestoration />
+        <Navigation user={data ? data.user : null} />
+        {/* children will be the root Component, ErrorBoundary, or HydrateFallback */}
+        {children}
         <Scripts />
+        <ScrollRestoration />
       </body>
     </html>
   );
 }
 
 function App() {
-  return <Application />;
+  return <Outlet />;
 }
 
 export default withSentry(App);
