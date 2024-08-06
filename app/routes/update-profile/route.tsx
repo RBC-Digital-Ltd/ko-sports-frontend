@@ -4,7 +4,7 @@ import {
   LoaderFunctionArgs,
   redirect,
 } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { Form, useLoaderData } from "@remix-run/react";
 import { authenticator } from "~/utils/auth.server";
 
 export default function UpdateProfile() {
@@ -12,7 +12,7 @@ export default function UpdateProfile() {
   return (
     <div>
       <h1>Update Profile</h1>
-      <form method="post">
+      <Form method="post">
         <label>
           First Name
           <input name="firstName" type="text" defaultValue={data.first_name} />
@@ -22,7 +22,7 @@ export default function UpdateProfile() {
           <input name="lastName" type="text" defaultValue={data.last_name} />
         </label>
         <button type="submit">Complete Profile</button>
-      </form>
+      </Form>
     </div>
   );
 }
