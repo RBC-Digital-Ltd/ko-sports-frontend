@@ -12,7 +12,6 @@ export const meta: MetaFunction = () => {
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   const user = await authenticator.isAuthenticated(request);
-  console.log(user);
   return json({ KO_VERSION: process.env.KO_VERSION, user });
 };
 

@@ -12,7 +12,7 @@ import type { User } from "~/utils/auth.server";
 import { classNames } from "~/utils/classnames";
 
 type NavigationProps = {
-  user: User;
+  user: User | null;
 };
 
 export default function Navigation({ user }: NavigationProps) {
