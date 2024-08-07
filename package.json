@@ -33,7 +33,7 @@
     "@flydotio/dockerfile": "^0.5.8",
     "@percy/cli": "^1.29.1",
     "@playwright/test": "^1.46.0",
-    "@remix-run/dev": "^2.11.0",
+    "@remix-run/dev": "^2.11.1",
     "@sentry/vite-plugin": "^2.22.0",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.13",
