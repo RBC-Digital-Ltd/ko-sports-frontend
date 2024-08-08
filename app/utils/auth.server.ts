@@ -14,7 +14,7 @@ export const authenticator = new Authenticator<User>(sessionStorage);
 
 const auth0Strategy = new Auth0Strategy(
   {
-    callbackURL: `http://${process.env.UI_BASE_URL}/auth/callback`,
+    callbackURL: `${process.env.UI_BASE_URL}/auth/callback`,
     clientID: process.env.CLIENT_ID || "",
     clientSecret: process.env.CLIENT_SECRET || "",
     domain: process.env.DOMAIN || "",
