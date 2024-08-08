@@ -22,10 +22,9 @@ const auth0Strategy = new Auth0Strategy(
   },
   async ({ accessToken, profile }) => {
     // Confirm if we have a user, if not, create one.
-    console.log("Checking profile", profile);
     console.log("Base URL", process.env.API_BASE_URL);
     const checkProfileRequest = await fetch(
-      `http://${process.env.API_BASE_URL}/auth/check-profile`,
+      `${process.env.API_BASE_URL}/auth/check-profile`,
       {
         headers: { Authorization: `Bearer ${accessToken}` },
       },
@@ -35,7 +34,7 @@ const auth0Strategy = new Auth0Strategy(
 
     if (checkProfileRequest.status === 404) {
       console.log("Creating profile");
-      await fetch(`http://${process.env.API_BASE_URL}/auth/create-profile`, {
+      await fetch(`${process.env.API_BASE_URL}/auth/create-profile`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`,

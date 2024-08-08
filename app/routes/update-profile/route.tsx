@@ -33,7 +33,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   });
 
   const profileRequest = await fetch(
-    `http://${process.env.API_BASE_URL}/auth/check-profile`,
+    `${process.env.API_BASE_URL}/auth/check-profile`,
     {
       headers: { Authorization: `Bearer ${accessToken}` },
     },
@@ -49,7 +49,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const formData = await request.formData();
   const updates = Object.fromEntries(formData);
 
-  await fetch(`http://${process.env.API_BASE_URL}/auth/update-profile`, {
+  await fetch(`${process.env.API_BASE_URL}/auth/update-profile`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${user?.accessToken}`,

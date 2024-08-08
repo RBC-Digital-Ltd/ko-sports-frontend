@@ -4,7 +4,7 @@ import { authenticator } from "~/utils/auth.server";
 export const loader = async (args: LoaderFunctionArgs) => {
   const user = await authenticator.isAuthenticated(args.request);
   const request = await fetch(
-    `http://${process.env.API_BASE_URL}/auth/check-profile`,
+    `${process.env.API_BASE_URL}/auth/check-profile`,
     {
       headers: { Authorization: `Bearer ${user?.accessToken}` },
     },
