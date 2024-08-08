@@ -3,9 +3,12 @@ import { authenticator } from "~/utils/auth.server";
 
 export const loader = async (args: LoaderFunctionArgs) => {
   const user = await authenticator.isAuthenticated(args.request);
-  const request = await fetch("http://localhost:4000/dev/auth/check-profile", {
-    headers: { Authorization: `Bearer ${user?.accessToken}` },
-  });
+  const request = await fetch(
+    `http://${process.env.API_BASE_URL}/auth/check-profile`,
+    {
+      headers: { Authorization: `Bearer ${user?.accessToken}` },
+    },
+  );
 
   if (request.status === 404) {
     return redirect("/update-profile");

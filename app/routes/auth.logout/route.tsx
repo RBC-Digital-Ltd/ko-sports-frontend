@@ -10,7 +10,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const logoutURL = new URL(`https://${process.env.DOMAIN}/v2/logout`);
 
   logoutURL.searchParams.set("client_id", process.env.CLIENT_ID || "");
-  logoutURL.searchParams.set("returnTo", "http://localhost:3000");
+  logoutURL.searchParams.set("returnTo", process.env.UI_BASE_URL || "");
 
   return redirect(logoutURL.toString(), {
     headers: {

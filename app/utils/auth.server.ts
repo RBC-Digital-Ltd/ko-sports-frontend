@@ -14,7 +14,7 @@ export const authenticator = new Authenticator<User>(sessionStorage);
 
 const auth0Strategy = new Auth0Strategy(
   {
-    callbackURL: "http://localhost:3000/auth/callback",
+    callbackURL: `http://${process.env.UI_BASE_URL}/auth/callback`,
     clientID: process.env.CLIENT_ID || "",
     clientSecret: process.env.CLIENT_SECRET || "",
     domain: process.env.DOMAIN || "",
@@ -23,14 +23,14 @@ const auth0Strategy = new Auth0Strategy(
   async ({ accessToken, profile }) => {
     // Confirm if we have a user, if not, create one.
     const checkProfileRequest = await fetch(
-      "http://localhost:4000/dev/auth/check-profile",
+      `http://${process.env.API_BASE_URL}/auth/check-profile`,
       {
         headers: { Authorization: `Bearer ${accessToken}` },
       },
     );
 
     if (checkProfileRequest.status === 404) {
-      await fetch("http://localhost:4000/dev/auth/create-profile", {
+      await fetch(`http://${process.env.API_BASE_URL}/auth/create-profile`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`,
