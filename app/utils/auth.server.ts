@@ -23,6 +23,7 @@ const auth0Strategy = new Auth0Strategy(
   async ({ accessToken, profile }) => {
     // Confirm if we have a user, if not, create one.
     console.log("Checking profile", profile);
+    console.log("Base URL", process.env.API_BASE_URL);
     const checkProfileRequest = await fetch(
       `http://${process.env.API_BASE_URL}/auth/check-profile`,
       {
@@ -30,7 +31,7 @@ const auth0Strategy = new Auth0Strategy(
       },
     );
 
-    console.log(checkProfileRequest.status);
+    console.log("Status: ", checkProfileRequest.status);
 
     if (checkProfileRequest.status === 404) {
       console.log("Creating profile");
