@@ -39,6 +39,11 @@
   }
 }
 
+.menuLink {
+  text-decoration: none;
+  color: var(--mantine-color-text);
+}
+
 .user {
   color: light-dark(var(--mantine-color-black), var(--mantine-color-dark-0));
   padding: var(--mantine-spacing-xs) var(--mantine-spacing-sm);

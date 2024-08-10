@@ -18,9 +18,9 @@ import {
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 
-import { IconChevronDown, IconHeart } from "@tabler/icons-react";
+import { IconChevronDown } from "@tabler/icons-react";
 
-import { Form, Link } from "@remix-run/react";
+import { Link, useNavigate } from "@remix-run/react";
 
 import type { User } from "~/utils/auth.server";
 
@@ -33,18 +33,12 @@ type NavigationProps = {
 const links = [{ title: "Home", to: "/" }];
 
 export default function Navigation({ user }: NavigationProps) {
+  const navigate = useNavigate();
   const [opened, { toggle, close }] = useDisclosure(false);
   const [userMenuOpened, setUserMenuOpened] = useState(false);
 
   const items = links.map((link) => (
-    <Link
-      key={link.to}
-      to={link.to}
-      className={classes.link}
-      onClick={(event) => {
-        event.preventDefault();
-      }}
-    >
+    <Link key={link.to} to={link.to} className={classes.link} onClick={close}>
       {link.title}
     </Link>
   ));
@@ -58,50 +52,67 @@ export default function Navigation({ user }: NavigationProps) {
           </Group>
 
           <Group gap={5} visibleFrom="xs">
-            <Menu
-              width={260}
-              position="bottom-end"
-              transitionProps={{ transition: "pop-top-right" }}
-              onClose={() => setUserMenuOpened(false)}
-              onOpen={() => setUserMenuOpened(true)}
-              withinPortal
-            >
-              <Menu.Target>
-                <UnstyledButton
-                  className={cx(classes.user, {
-                    [classes.userActive]: userMenuOpened,
-                  })}
+            {user ? (
+              <Menu
+                width={260}
+                position="bottom-end"
+                transitionProps={{ transition: "pop-top-right" }}
+                onClose={() => setUserMenuOpened(false)}
+                onOpen={() => setUserMenuOpened(true)}
+                withinPortal
+              >
+                <Menu.Target>
+                  <UnstyledButton
+                    className={cx(classes.user, {
+                      [classes.userActive]: userMenuOpened,
+                    })}
+                  >
+                    <Group gap={7}>
+                      <Avatar
+                        src={user?.profile.photos![0].value}
+                        alt={user?.profile.displayName}
+                        radius="xl"
+                        size={20}
+                      />
+                      <Text className={classes.userName} size="sm">
+                        {user?.profile.displayName}
+                      </Text>
+                      <IconChevronDown
+                        style={{ width: rem(12), height: rem(12) }}
+                        stroke={1.5}
+                      />
+                    </Group>
+                  </UnstyledButton>
+                </Menu.Target>
+                <Menu.Dropdown>
+                  <Menu.Item>
+                    <Link to={`/update-profile`} className={classes.menuLink}>
+                      Your Profile
+                    </Link>
+                  </Menu.Item>
+                  <Menu.Item>
+                    <Link to="/auth/logout" className={classes.menuLink}>
+                      Log out
+                    </Link>
+                  </Menu.Item>
+                </Menu.Dropdown>
+              </Menu>
+            ) : (
+              <Group>
+                <Button
+                  variant="default"
+                  onClick={() => navigate("/auth/auth0")}
                 >
-                  <Group gap={7}>
-                    <Avatar
-                      src={user?.profile.photos![0].value}
-                      alt={user?.profile.displayName}
-                      radius="xl"
-                      size={20}
-                    />
-                    <Text className={classes.userName} size="sm">
-                      {user?.profile.displayName}
-                    </Text>
-                    <IconChevronDown
-                      style={{ width: rem(12), height: rem(12) }}
-                      stroke={1.5}
-                    />
-                  </Group>
-                </UnstyledButton>
-              </Menu.Target>
-              <Menu.Dropdown>
-                <Menu.Item
-                  leftSection={
-                    <IconHeart
-                      style={{ width: rem(16), height: rem(16) }}
-                      stroke={1.5}
-                    />
-                  }
+                  Log in
+                </Button>
+
+                <Button
+                  onClick={() => navigate("/auth/auth0?screen_hint=signup")}
                 >
-                  Liked posts
-                </Menu.Item>
-              </Menu.Dropdown>
-            </Menu>
+                  Sign up
+                </Button>
+              </Group>
+            )}
           </Group>
 
           <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
@@ -124,8 +135,12 @@ export default function Navigation({ user }: NavigationProps) {
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+            <Button variant="default" onClick={() => navigate("/auth/auth0")}>
+              Log in
+            </Button>
+            <Button onClick={() => navigate("/auth/auth0?screen_hint=signup")}>
+              Sign up
+            </Button>
           </Group>
         </ScrollArea>
       </Drawer>
