@@ -2,6 +2,10 @@
 // so you can access `data.sentryTrace` and `data.sentryBaggage` alongside other data from loader.
 import { captureRemixErrorBoundaryError, withSentry } from "@sentry/remix";
 
+// Import styles of packages that you've installed.
+// All packages except `@mantine/hooks` require styles imports
+import "@mantine/core/styles.css";
+
 import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import {
   json,
@@ -13,7 +17,16 @@ import {
   useRouteError,
   useRouteLoaderData,
 } from "@remix-run/react";
+
+import {
+  ColorSchemeScript,
+  MantineProvider,
+  createTheme,
+  type MantineColorsTuple,
+} from "@mantine/core";
+
 import styles from "./tailwind.css?url";
+
 import { authenticator } from "./utils/auth.server";
 import Navigation from "./components/Navigation";
 
@@ -30,6 +43,25 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return json({ user });
 }
 
+const koColors: MantineColorsTuple = [
+  "#fff5e0",
+  "#ffe8cc",
+  "#fdd29c",
+  "#fbb969",
+  "#f8a33c",
+  "#f79620",
+  "#f78f0e",
+  "#dc7b00",
+  "#c56d00",
+  "#ab5c00",
+];
+
+const theme = createTheme({
+  colors: {
+    koColors,
+  },
+});
+
 export function Layout({ children }: { children: React.ReactNode }) {
   const data = useRouteLoaderData<typeof loader>("root");
   return (
@@ -39,11 +71,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <ColorSchemeScript />
       </head>
       <body>
-        <Navigation user={data ? data.user : null} />
-        {/* children will be the root Component, ErrorBoundary, or HydrateFallback */}
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">{children}</div>
+        <MantineProvider theme={theme}>
+          <Navigation user={data ? data.user : null} />
+          {/* children will be the root Component, ErrorBoundary, or HydrateFallback */}
+          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+            {children}
+          </div>
+        </MantineProvider>
 
         <Scripts />
         <ScrollRestoration />
