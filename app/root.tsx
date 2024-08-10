@@ -43,7 +43,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <body>
         <Navigation user={data ? data.user : null} />
         {/* children will be the root Component, ErrorBoundary, or HydrateFallback */}
-        {children}
+        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">{children}</div>
+
         <Scripts />
         <ScrollRestoration />
       </body>
