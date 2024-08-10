@@ -1,118 +1,134 @@
+import { useState } from "react";
+
+import cx from "clsx";
+
 import {
-  Disclosure,
-  DisclosureButton,
+  Container,
+  Group,
+  Burger,
   Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+  UnstyledButton,
+  Avatar,
+  Text,
+  rem,
+  Drawer,
+  ScrollArea,
+  Divider,
+  Button,
+} from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+
+import { IconChevronDown, IconHeart } from "@tabler/icons-react";
+
 import { Form, Link } from "@remix-run/react";
+
 import type { User } from "~/utils/auth.server";
-import { classNames } from "~/utils/classnames";
+
+import classes from "./index.module.css";
 
 type NavigationProps = {
   user: User | null;
 };
 
+const links = [{ title: "Home", to: "/" }];
+
 export default function Navigation({ user }: NavigationProps) {
+  const [opened, { toggle, close }] = useDisclosure(false);
+  const [userMenuOpened, setUserMenuOpened] = useState(false);
+
+  const items = links.map((link) => (
+    <Link
+      key={link.to}
+      to={link.to}
+      className={classes.link}
+      onClick={(event) => {
+        event.preventDefault();
+      }}
+    >
+      {link.title}
+    </Link>
+  ));
   return (
-    <Disclosure as="nav" className="bg-gray-700">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon
-                aria-hidden="true"
-                className="block h-6 w-6 group-data-[open]:hidden"
-              />
-              <XMarkIcon
-                aria-hidden="true"
-                className="hidden h-6 w-6 group-data-[open]:block"
-              />
-            </DisclosureButton>
-          </div>
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex flex-shrink-0 items-center">
-              <span className="text-white">KO Sports</span>
-            </div>
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4">
-                <a
-                  key="Home"
-                  href="/"
-                  className={classNames(
-                    "bg-gray-900 text-white",
-                    "rounded-md px-3 py-2 text-sm font-medium",
-                  )}
+    <>
+      <header className={classes.header}>
+        <Container size="xl" className={classes.inner}>
+          <Group visibleFrom="xs">
+            <Text>KO Sports</Text>
+            {items}
+          </Group>
+
+          <Group gap={5} visibleFrom="xs">
+            <Menu
+              width={260}
+              position="bottom-end"
+              transitionProps={{ transition: "pop-top-right" }}
+              onClose={() => setUserMenuOpened(false)}
+              onOpen={() => setUserMenuOpened(true)}
+              withinPortal
+            >
+              <Menu.Target>
+                <UnstyledButton
+                  className={cx(classes.user, {
+                    [classes.userActive]: userMenuOpened,
+                  })}
                 >
-                  Home
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {/* Profile dropdown */}
-            {user ? (
-              <Menu as="div" className="relative ml-3">
-                <div>
-                  <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                    <span className="absolute -inset-1.5" />
-                    <span className="sr-only">Open user menu</span>
-                    <img
-                      alt=""
-                      src={
-                        user.profile.photos && user.profile.photos.length > 0
-                          ? user.profile.photos[0].value
-                          : "https://www.gravatar.com/avatar/00000000000000000000000000000000"
-                      }
-                      className="h-8 w-8 rounded-full"
+                  <Group gap={7}>
+                    <Avatar
+                      src={user?.profile.photos![0].value}
+                      alt={user?.profile.displayName}
+                      radius="xl"
+                      size={20}
                     />
-                  </MenuButton>
-                </div>
-                <MenuItems
-                  transition
-                  className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+                    <Text className={classes.userName} size="sm">
+                      {user?.profile.displayName}
+                    </Text>
+                    <IconChevronDown
+                      style={{ width: rem(12), height: rem(12) }}
+                      stroke={1.5}
+                    />
+                  </Group>
+                </UnstyledButton>
+              </Menu.Target>
+              <Menu.Dropdown>
+                <Menu.Item
+                  leftSection={
+                    <IconHeart
+                      style={{ width: rem(16), height: rem(16) }}
+                      stroke={1.5}
+                    />
+                  }
                 >
-                  <MenuItem>
-                    <Link
-                      to={`/update-profile`}
-                      className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
-                    >
-                      Your Profile
-                    </Link>
-                  </MenuItem>
-                  <MenuItem>
-                    <a
-                      href="/"
-                      className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
-                    >
-                      Settings
-                    </a>
-                  </MenuItem>
-                  <MenuItem>
-                    <a
-                      href="/auth/logout"
-                      className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
-                    >
-                      Logout
-                    </a>
-                  </MenuItem>
-                </MenuItems>
-              </Menu>
-            ) : (
-              <Form action="/auth/auth0" method="post">
-                <button className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm">
-                  Login
-                </button>
-              </Form>
-            )}
-          </div>
-        </div>
-      </div>
-    </Disclosure>
+                  Liked posts
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+          </Group>
+
+          <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+        </Container>
+      </header>
+      <Drawer
+        opened={opened}
+        onClose={close}
+        size="100%"
+        padding="md"
+        title="Navigation"
+        hiddenFrom="sm"
+        zIndex={1000000}
+      >
+        <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
+          <Divider my="sm" />
+
+          {items}
+
+          <Divider my="sm" />
+
+          <Group justify="center" grow pb="xl" px="md">
+            <Button variant="default">Log in</Button>
+            <Button>Sign up</Button>
+          </Group>
+        </ScrollArea>
+      </Drawer>
+    </>
   );
 }

@@ -6,7 +6,7 @@ import { captureRemixErrorBoundaryError, withSentry } from "@sentry/remix";
 // All packages except `@mantine/hooks` require styles imports
 import "@mantine/core/styles.css";
 
-import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
+import type { LoaderFunctionArgs } from "@remix-run/node";
 import {
   json,
   Links,
@@ -25,12 +25,10 @@ import {
   type MantineColorsTuple,
 } from "@mantine/core";
 
-import styles from "./tailwind.css?url";
-
 import { authenticator } from "./utils/auth.server";
 import Navigation from "./components/Navigation";
 
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+// export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export const ErrorBoundary = () => {
   const error = useRouteError();
@@ -43,7 +41,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return json({ user });
 }
 
-const koColors: MantineColorsTuple = [
+const koColor: MantineColorsTuple = [
   "#fff5e0",
   "#ffe8cc",
   "#fdd29c",
@@ -57,8 +55,9 @@ const koColors: MantineColorsTuple = [
 ];
 
 const theme = createTheme({
+  primaryColor: "ko",
   colors: {
-    koColors,
+    ko: koColor,
   },
 });
 
