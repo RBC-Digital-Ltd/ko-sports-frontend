@@ -8,23 +8,14 @@ import { nodeProfilingIntegration } from "@sentry/profiling-node";
 
 import { PassThrough } from "node:stream";
 
-import type {
-  ActionFunctionArgs,
-  AppLoadContext,
-  EntryContext,
-  LoaderFunctionArgs,
-} from "@remix-run/node";
+import type { AppLoadContext, EntryContext } from "@remix-run/node";
 import { createReadableStreamFromReadable } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 
-export function handleError(
-  error: unknown,
-  { request }: LoaderFunctionArgs | ActionFunctionArgs,
-) {
-  Sentry.captureRemixServerException(error, "remix.server", request, true);
-}
+// Alternative: Use the Sentry utility function if you don't need to wrap a custom function
+export const handleError = Sentry.sentryHandleError;
 
 Sentry.init({
   dsn: "https://91ad695deec04a24c99fd86cd89d6e9a@o369886.ingest.sentry.io/4506495702925312",
@@ -35,6 +26,7 @@ Sentry.init({
     // Add profiling integration to list of integrations
     nodeProfilingIntegration(),
   ],
+  sendDefaultPii: true,
 });
 
 const ABORT_DELAY = 5_000;

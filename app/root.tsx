@@ -1,16 +1,8 @@
 // Sentry provides a type for Remix v2 MetaFunction parameters
 // so you can access `data.sentryTrace` and `data.sentryBaggage` alongside other data from loader.
-import {
-  captureRemixErrorBoundaryError,
-  withSentry,
-  type SentryMetaArgs,
-} from "@sentry/remix";
+import { captureRemixErrorBoundaryError, withSentry } from "@sentry/remix";
 
-import type {
-  LinksFunction,
-  LoaderFunctionArgs,
-  MetaFunction,
-} from "@remix-run/node";
+import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import {
   json,
   Links,
@@ -37,19 +29,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const user = await authenticator.isAuthenticated(request);
   return json({ user });
 }
-
-export const meta = ({ data }: SentryMetaArgs<MetaFunction<typeof loader>>) => {
-  return [
-    {
-      name: "sentry-trace",
-      content: data.sentryTrace,
-    },
-    {
-      name: "baggage",
-      content: data.sentryBaggage,
-    },
-  ];
-};
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const data = useRouteLoaderData<typeof loader>("root");
