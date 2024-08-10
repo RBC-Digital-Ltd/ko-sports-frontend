@@ -15,7 +15,6 @@ export const loader = async (args: LoaderFunctionArgs) => {
   }
 
   const data = await request.json();
-  console.log(data);
 
   if (data.profile_complete) {
     return redirect("/");
