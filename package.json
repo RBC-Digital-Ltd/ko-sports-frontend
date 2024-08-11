@@ -13,9 +13,6 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@headlessui/react": "^2.1.2",
-    "@heroicons/react": "^2.1.5",
-    "@hookform/resolvers": "^3.9.0",
     "@mantine/core": "^7.12.0",
     "@mantine/form": "^7.12.0",
     "@mantine/hooks": "^7.12.0",
@@ -31,12 +28,9 @@
     "moderndash": "^3.12.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-hook-form": "^7.52.2",
     "remix-auth": "^3.7.0",
     "remix-auth-auth0": "^1.10.0",
-    "remix-hook-form": "^5.0.4",
-    "remix-utils": "^7.6.0",
-    "zod": "^3.23.8"
+    "remix-utils": "^7.6.0"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.5.8",
@@ -45,8 +39,6 @@
     "@remix-run/dev": "^2.11.1",
     "@remix-run/testing": "^2.11.1",
     "@sentry/vite-plugin": "^2.22.0",
-    "@tailwindcss/forms": "^0.5.7",
-    "@tailwindcss/typography": "^0.5.14",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
     "@types/express": "^4.17.21",
@@ -55,7 +47,6 @@
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
-    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-import-resolver-typescript": "^3.6.1",
@@ -69,7 +60,6 @@
     "postcss-simple-vars": "^7.0.1",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.9",
     "typescript": "^5.5.4",
     "vite": "^5.4.0",
     "vite-tsconfig-paths": "^4.3.2",
