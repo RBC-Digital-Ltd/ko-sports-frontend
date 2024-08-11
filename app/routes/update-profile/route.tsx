@@ -23,6 +23,8 @@ export default function UpdateProfile() {
     validate: {
       firstName: (value) =>
         value.length < 2 ? "First Name must have at least 2 letters" : null,
+      lastName: (value) =>
+        value.length < 2 ? "Last Name must have at least 2 letters" : null,
     },
   });
   return (
