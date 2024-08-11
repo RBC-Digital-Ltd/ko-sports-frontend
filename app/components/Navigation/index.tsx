@@ -22,15 +22,14 @@ import { IconChevronDown } from "@tabler/icons-react";
 
 import { Link, useNavigate } from "@remix-run/react";
 
+import classes from "./index.module.css";
 import type { User } from "~/utils/auth.server";
 
-import classes from "./index.module.css";
+const links = [{ title: "Home", to: "/" }];
 
 type NavigationProps = {
   user: User | null;
 };
-
-const links = [{ title: "Home", to: "/" }];
 
 export default function Navigation({ user }: NavigationProps) {
   const navigate = useNavigate();
@@ -61,7 +60,7 @@ export default function Navigation({ user }: NavigationProps) {
                 onOpen={() => setUserMenuOpened(true)}
                 withinPortal
               >
-                <Menu.Target>
+                <Menu.Target data-testid="MenuOpen">
                   <UnstyledButton
                     className={cx(classes.user, {
                       [classes.userActive]: userMenuOpened,

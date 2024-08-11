@@ -36,11 +36,6 @@ export const ErrorBoundary = () => {
   return <div>Something went wrong</div>;
 };
 
-export async function loader({ request }: LoaderFunctionArgs) {
-  const user = await authenticator.isAuthenticated(request);
-  return json({ user });
-}
-
 const koColor: MantineColorsTuple = [
   "#fff5e0",
   "#ffe8cc",
@@ -61,6 +56,11 @@ const theme = createTheme({
   },
 });
 
+export async function loader({ request }: LoaderFunctionArgs) {
+  const user = await authenticator.isAuthenticated(request);
+  return json({ user });
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
   const data = useRouteLoaderData<typeof loader>("root");
   return (
@@ -74,7 +74,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-          <Navigation user={data ? data.user : null} />
+          <Navigation user={data?.user || null} />
           {/* children will be the root Component, ErrorBoundary, or HydrateFallback */}
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             {children}
