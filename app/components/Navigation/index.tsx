@@ -84,16 +84,12 @@ export default function Navigation({ user }: NavigationProps) {
                   </UnstyledButton>
                 </Menu.Target>
                 <Menu.Dropdown>
-                  <Menu.Item>
-                    <Link to={`/update-profile`} className={classes.menuLink}>
-                      Your Profile
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item>
-                    <Link to="/auth/logout" className={classes.menuLink}>
-                      Log out
-                    </Link>
-                  </Menu.Item>
+                  <Link to={`/update-profile`} className={classes.menuLink}>
+                    <Menu.Item>Your Profile</Menu.Item>
+                  </Link>
+                  <Link to="/auth/logout" className={classes.menuLink}>
+                    <Menu.Item>Log out</Menu.Item>
+                  </Link>
                 </Menu.Dropdown>
               </Menu>
             ) : (

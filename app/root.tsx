@@ -20,6 +20,7 @@ import {
 
 import {
   ColorSchemeScript,
+  Container,
   MantineProvider,
   createTheme,
   type MantineColorsTuple,
@@ -76,9 +77,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <MantineProvider theme={theme}>
           <Navigation user={data?.user || null} />
           {/* children will be the root Component, ErrorBoundary, or HydrateFallback */}
-          <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <Container size="xl" mt={16}>
             {children}
-          </div>
+          </Container>
         </MantineProvider>
 
         <Scripts />
