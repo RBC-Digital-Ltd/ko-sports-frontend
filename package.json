@@ -38,7 +38,7 @@
     "@playwright/test": "^1.46.0",
     "@remix-run/dev": "^2.11.1",
     "@remix-run/testing": "^2.11.1",
-    "@sentry/vite-plugin": "^2.22.0",
+    "@sentry/vite-plugin": "^2.22.1",
     "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
     "@types/express": "^4.17.21",
