@@ -18,7 +18,7 @@
     "@mantine/hooks": "^7.12.2",
     "@remix-run/node": "^2.12.1",
     "@remix-run/react": "^2.11.2",
-    "@remix-run/serve": "^2.11.2",
+    "@remix-run/serve": "^2.12.1",
     "@remix-run/server-runtime": "^2.11.2",
     "@sentry/profiling-node": "^8.29.0",
     "@sentry/remix": "^8.29.0",
