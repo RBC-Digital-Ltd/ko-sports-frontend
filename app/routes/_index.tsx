@@ -1,5 +1,5 @@
 import { json, type MetaFunction } from "@remix-run/node";
-import { Form, useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -32,11 +32,9 @@ export default function Index() {
         <ul>
           <li>Log In</li>
           <li>
-            <Form action="/auth/logout" method="post">
-              <button className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm">
-                Logout
-              </button>
-            </Form>
+            <Link to="/auth/logout">
+              <button>Log out</button>
+            </Link>
           </li>
           <li>
             <a

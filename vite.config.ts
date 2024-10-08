@@ -19,7 +19,12 @@ export default defineConfig({
     port: 3000,
   },
   plugins: [
-    !process.env.VITEST && remix(),
+    !process.env.VITEST &&
+      remix({
+        future: {
+          unstable_optimizeDeps: true,
+        },
+      }),
     tsconfigPaths(),
     sentryVitePlugin({
       // If you use .sentryclirc or environment variables,
