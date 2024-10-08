@@ -109,7 +109,6 @@ export default function Navigation({ user }: NavigationProps) {
               </Group>
             )}
           </Group>
-
           <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
         </Container>
       </header>
