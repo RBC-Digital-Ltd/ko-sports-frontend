@@ -40,7 +40,7 @@
     "@remix-run/dev": "^2.13.1",
     "@remix-run/testing": "^2.13.1",
     "@sentry/vite-plugin": "^2.22.5",
-    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/jest-dom": "^6.6.1",
     "@testing-library/react": "^16.0.1",
     "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.16.11",
