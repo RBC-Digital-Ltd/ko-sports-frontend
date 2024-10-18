@@ -39,7 +39,7 @@
     "@playwright/test": "^1.48.1",
     "@remix-run/dev": "^2.13.1",
     "@remix-run/testing": "^2.13.1",
-    "@sentry/vite-plugin": "^2.22.5",
+    "@sentry/vite-plugin": "^2.22.6",
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
     "@types/eslint__js": "^8.42.3",
