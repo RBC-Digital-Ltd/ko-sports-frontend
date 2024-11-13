@@ -22,7 +22,7 @@
     "@remix-run/server-runtime": "^2.14.0",
     "@sentry/profiling-node": "^8.38.0",
     "@sentry/remix": "^8.38.0",
-    "@tabler/icons-react": "^3.21.0",
+    "@tabler/icons-react": "^3.22.0",
     "clsx": "^2.1.1",
     "isbot": "5.1.17",
     "moderndash": "^3.12.0",
