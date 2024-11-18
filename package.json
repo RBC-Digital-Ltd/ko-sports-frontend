@@ -33,7 +33,7 @@
     "remix-utils": "^7.7.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.14.0",
+    "@eslint/js": "^9.15.0",
     "@flydotio/dockerfile": "^0.5.9",
     "@percy/cli": "^1.30.2",
     "@playwright/test": "^1.48.2",
