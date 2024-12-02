@@ -35,7 +35,7 @@
   "devDependencies": {
     "@eslint/js": "^9.15.0",
     "@flydotio/dockerfile": "^0.5.9",
-    "@percy/cli": "^1.30.3",
+    "@percy/cli": "^1.30.4",
     "@playwright/test": "^1.49.0",
     "@remix-run/dev": "^2.15.0",
     "@remix-run/testing": "^2.15.0",
