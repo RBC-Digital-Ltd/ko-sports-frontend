@@ -20,7 +20,7 @@
     "@remix-run/react": "^2.15.0",
     "@remix-run/serve": "^2.15.0",
     "@remix-run/server-runtime": "^2.15.0",
-    "@sentry/profiling-node": "^8.41.0",
+    "@sentry/profiling-node": "^8.42.0",
     "@sentry/remix": "^8.41.0",
     "@tabler/icons-react": "^3.23.0",
     "clsx": "^2.1.1",
