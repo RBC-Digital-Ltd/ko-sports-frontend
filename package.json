@@ -38,7 +38,7 @@
     "@percy/cli": "^1.30.4",
     "@playwright/test": "^1.49.0",
     "@remix-run/dev": "^2.15.0",
-    "@remix-run/testing": "^2.15.0",
+    "@remix-run/testing": "^2.15.1",
     "@sentry/vite-plugin": "^2.22.7",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
