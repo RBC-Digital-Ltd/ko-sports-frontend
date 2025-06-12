@@ -100,7 +100,7 @@ jobs:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
       - name: Lighthouse CI Action
-        uses: treosh/lighthouse-ci-action@12.1.0
+        uses: treosh/lighthouse-ci-action@12.6.1
         with:
           urls: |
             https://ko-sports-frontend.fly.dev/
