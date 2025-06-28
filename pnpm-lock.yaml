@@ -45,8 +45,8 @@ importers:
         specifier: 5.1.17
         version: 5.1.17
       moderndash:
-        specifier: ^3.12.0
-        version: 3.12.0
+        specifier: ^4.0.0
+        version: 4.0.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -3695,9 +3695,9 @@ packages:
   modern-ahocorasick@1.0.1:
     resolution: {integrity: sha512-yoe+JbhTClckZ67b2itRtistFKf8yPYelHLc7e5xAwtNAXxM6wJTUx2C7QeVSJFDzKT7bCIFyBVybPMKvmB9AA==}
 
-  moderndash@3.12.0:
-    resolution: {integrity: sha512-mARaWQGOoDYdBIhmeyPYY+ymEqb0/bDSOyE1sw6abwOT7V07xAS/Yn1idwpV7nLBnTAJ5ED6jBQxoPZsoxr7jg==}
-    engines: {node: '>=16.15', npm: '>=8'}
+  moderndash@4.0.0:
+    resolution: {integrity: sha512-77kEJCsBo3YzqIrO4ZWHo1h7q8f8ZIRxQ0DE0fEvj3rZWsfTMLeRzctBjkz2zKM1BAIQsOqB79jm3dZ4RDFmqw==}
+    engines: {node: '>=20', npm: '>=10'}
 
   module-details-from-path@1.0.3:
     resolution: {integrity: sha512-ySViT69/76t8VhE1xXHK6Ch4NcDd26gx0MzKXLO+F7NOtnqH68d9zF94nT8ZWSxXh8ELOERsnJO/sWt1xZYw5A==}
@@ -4852,6 +4852,10 @@ packages:
 
   type-fest@4.26.1:
     resolution: {integrity: sha512-yOGpmOAL7CkKe/91I5O3gPICmJNLJ1G4zFYVAsRHg7M64biSnPtRj0WNQt++bRkjYOqjWXrhnUw1utzmVErAdg==}
+    engines: {node: '>=16'}
+
+  type-fest@4.27.0:
+    resolution: {integrity: sha512-3IMSWgP7C5KSQqmo1wjhKrwsvXAtF33jO3QY+Uy++ia7hqvgSK6iXbbg5PbDBc1P2ZbNEDgejOrN4YooXvhwCw==}
     engines: {node: '>=16'}
 
   type-is@1.6.18:
@@ -9800,9 +9804,10 @@ snapshots:
 
   modern-ahocorasick@1.0.1: {}
 
-  moderndash@3.12.0:
+  moderndash@4.0.0:
     dependencies:
       hotscript: 1.0.13
+      type-fest: 4.27.0
 
   module-details-from-path@1.0.3: {}
 
@@ -11050,6 +11055,8 @@ snapshots:
       prelude-ls: 1.2.1
 
   type-fest@4.26.1: {}
+
+  type-fest@4.27.0: {}
 
   type-is@1.6.18:
     dependencies:
